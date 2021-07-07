@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		13475C592696199A0026ACD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C582696199A0026ACD1 /* AppDelegate.swift */; };
 		13475C5B2696199A0026ACD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C5A2696199A0026ACD1 /* SceneDelegate.swift */; };
-		13475C5D2696199A0026ACD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C5C2696199A0026ACD1 /* ViewController.swift */; };
 		13475C602696199A0026ACD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13475C5E2696199A0026ACD1 /* Main.storyboard */; };
 		13475C622696199B0026ACD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13475C612696199B0026ACD1 /* Assets.xcassets */; };
 		13475C652696199B0026ACD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13475C632696199B0026ACD1 /* LaunchScreen.storyboard */; };
 		13475C702696199B0026ACD1 /* iArtistsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C6F2696199B0026ACD1 /* iArtistsTests.swift */; };
 		13475C7B2696199B0026ACD1 /* iArtistsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C7A2696199B0026ACD1 /* iArtistsUITests.swift */; };
+		13475C8E269622710026ACD1 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C8D269622710026ACD1 /* Track.swift */; };
+		13475C9426962A530026ACD1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9326962A530026ACD1 /* NetworkManager.swift */; };
+		13475C9626962A650026ACD1 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9526962A650026ACD1 /* NetworkErrors.swift */; };
+		13475C9826963BBB0026ACD1 /* ArtistTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9726963BBB0026ACD1 /* ArtistTrackTableViewCell.swift */; };
+		13475C9A26963D0A0026ACD1 /* ArtistSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9926963D0A0026ACD1 /* ArtistSearchViewController.swift */; };
+		13475C9C269640050026ACD1 /* ArtistSearchModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9B269640050026ACD1 /* ArtistSearchModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +43,6 @@
 		13475C552696199A0026ACD1 /* iArtists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iArtists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13475C582696199A0026ACD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13475C5A2696199A0026ACD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		13475C5C2696199A0026ACD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		13475C5F2696199A0026ACD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13475C612696199B0026ACD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13475C642696199B0026ACD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,12 @@
 		13475C762696199B0026ACD1 /* iArtistsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iArtistsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		13475C7A2696199B0026ACD1 /* iArtistsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iArtistsUITests.swift; sourceTree = "<group>"; };
 		13475C7C2696199B0026ACD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13475C8D269622710026ACD1 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		13475C9326962A530026ACD1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		13475C9526962A650026ACD1 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		13475C9726963BBB0026ACD1 /* ArtistTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTrackTableViewCell.swift; sourceTree = "<group>"; };
+		13475C9926963D0A0026ACD1 /* ArtistSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewController.swift; sourceTree = "<group>"; };
+		13475C9B269640050026ACD1 /* ArtistSearchModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +109,11 @@
 		13475C572696199A0026ACD1 /* iArtists */ = {
 			isa = PBXGroup;
 			children = (
-				13475C582696199A0026ACD1 /* AppDelegate.swift */,
-				13475C5A2696199A0026ACD1 /* SceneDelegate.swift */,
-				13475C5C2696199A0026ACD1 /* ViewController.swift */,
-				13475C5E2696199A0026ACD1 /* Main.storyboard */,
-				13475C612696199B0026ACD1 /* Assets.xcassets */,
-				13475C632696199B0026ACD1 /* LaunchScreen.storyboard */,
-				13475C662696199B0026ACD1 /* Info.plist */,
+				13475C9226962A430026ACD1 /* Managers */,
+				13475C8B26961BFB0026ACD1 /* Models */,
+				13475C8826961BE40026ACD1 /* Views */,
+				13475C8926961BED0026ACD1 /* Controllers */,
+				13475C8A26961BF40026ACD1 /* Resources */,
 			);
 			path = iArtists;
 			sourceTree = "<group>";
@@ -126,6 +134,85 @@
 				13475C7C2696199B0026ACD1 /* Info.plist */,
 			);
 			path = iArtistsUITests;
+			sourceTree = "<group>";
+		};
+		13475C8826961BE40026ACD1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				13475C91269629DB0026ACD1 /* Custom Views */,
+				13475C8C26961C1F0026ACD1 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		13475C8926961BED0026ACD1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				13475C90269629C50026ACD1 /* Model Controllers */,
+				13475C8F269629BA0026ACD1 /* View Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		13475C8A26961BF40026ACD1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				13475C582696199A0026ACD1 /* AppDelegate.swift */,
+				13475C5A2696199A0026ACD1 /* SceneDelegate.swift */,
+				13475C612696199B0026ACD1 /* Assets.xcassets */,
+				13475C662696199B0026ACD1 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		13475C8B26961BFB0026ACD1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13475C8D269622710026ACD1 /* Track.swift */,
+				13475C9526962A650026ACD1 /* NetworkErrors.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		13475C8C26961C1F0026ACD1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				13475C5E2696199A0026ACD1 /* Main.storyboard */,
+				13475C632696199B0026ACD1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		13475C8F269629BA0026ACD1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				13475C9926963D0A0026ACD1 /* ArtistSearchViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		13475C90269629C50026ACD1 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				13475C9B269640050026ACD1 /* ArtistSearchModelController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		13475C91269629DB0026ACD1 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				13475C9726963BBB0026ACD1 /* ArtistTrackTableViewCell.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		13475C9226962A430026ACD1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				13475C9326962A530026ACD1 /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +345,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13475C5D2696199A0026ACD1 /* ViewController.swift in Sources */,
+				13475C9826963BBB0026ACD1 /* ArtistTrackTableViewCell.swift in Sources */,
+				13475C9426962A530026ACD1 /* NetworkManager.swift in Sources */,
+				13475C9C269640050026ACD1 /* ArtistSearchModelController.swift in Sources */,
+				13475C9A26963D0A0026ACD1 /* ArtistSearchViewController.swift in Sources */,
+				13475C8E269622710026ACD1 /* Track.swift in Sources */,
+				13475C9626962A650026ACD1 /* NetworkErrors.swift in Sources */,
 				13475C592696199A0026ACD1 /* AppDelegate.swift in Sources */,
 				13475C5B2696199A0026ACD1 /* SceneDelegate.swift in Sources */,
 			);
@@ -438,7 +530,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3YUN5S2WTZ;
-				INFOPLIST_FILE = iArtists/Info.plist;
+				INFOPLIST_FILE = iArtists/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,7 +538,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockingtriangle.iArtists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -457,7 +549,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3YUN5S2WTZ;
-				INFOPLIST_FILE = iArtists/Info.plist;
+				INFOPLIST_FILE = iArtists/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rockingtriangle.iArtists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
