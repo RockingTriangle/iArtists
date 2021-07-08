@@ -55,13 +55,12 @@ extension ArtistSearchViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell", for: indexPath)
                 as? ArtistTrackTableViewCell else { return UITableViewCell() }
-        
+        cell.trackImageView.image = nil
         cell.track = modelController.artistTracks[indexPath.row]
         return cell
     }
     
 } // End of UITableViewDelegate/DataSource functions
-
 extension ArtistSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -75,7 +74,6 @@ extension ArtistSearchViewController: UISearchBarDelegate {
     }
     
 } // End of UISearchBarDelegate functions
-
 extension ArtistSearchViewController: ReloadTableViewProtocol {
     
     func reloadTableView() {

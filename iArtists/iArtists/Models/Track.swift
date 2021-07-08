@@ -23,16 +23,29 @@ struct Track: Codable {
     private let releaseDate         : String?
     private let primaryGenreName    : String?
     private let trackPrice          : Double?
+    private let trackCover          : String?
+    private let trackPreview        : String?
+    
+    enum CodingKeys: String, CodingKey {
+        case artistName, trackName, releaseDate, primaryGenreName, trackPrice
+        case trackCover   = "artworkUrl100"
+        case trackPreview = "previewUrl"
+    }
     
     /// Properties for use in App to prevent API from providing nil values resulting in crash.
-    var displayArtistName       : String { artistName       ?? "Not Available" }
-    var displayTrackName        : String { trackName        ?? "Not Available" }
-    var displayPrimaryGenreName : String { primaryGenreName ?? "Not Available" }
-    var displayReleaseDate      : String { convertDateToDisplayString() ?? "Not Available" }
+    var displayArtistName       : String { artistName                   ?? "Not Available" }
+    var displayTrackName        : String { trackName                    ?? "Not Available" }
+    var displayPrimaryGenreName : String { primaryGenreName             ?? "N/A" }
+    var displayReleaseDate      : String { convertDateToDisplayString() ?? "N/A" }
+    var displayTrackCover       : String { trackCover                   ?? "itunesSearch" }
+    var displayTrackPreview     : String { trackPreview                 ?? "" }
     var displayTrackPrice       : String {
         if let trackPrice = trackPrice {
+            if trackPrice < 0 {
+                return "N/A"
+            }
             return "$\(trackPrice)"
-        } else { return "Not Available" }
+        } else { return "N/A" }
     }
     
     /// Helper function to convert API string to desired display format.
@@ -46,7 +59,7 @@ struct Track: Codable {
                 return dateFormatter.string(from: date)
             }
         }
-        return "Not Available"
+        return "N/A"
     } // End of convertDateToDisplayString function
     
 } // End of struct
