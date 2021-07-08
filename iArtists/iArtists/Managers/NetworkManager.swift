@@ -5,7 +5,7 @@
 //  Created by Mike Conner on 7/7/21.
 //
 
-import Foundation
+import UIKit
 
 final class NetworkManager {
     
@@ -14,25 +14,26 @@ final class NetworkManager {
     
     private init() {}
     
+    // MARK: - Properties
     var searchParameter: String?
-    
     var url: URL? {
-        
         let baseURL = "https://itunes.apple.com/search"
         
         guard let url = URL(string: baseURL),
               var components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return nil }
         
-        let queryParameter = URLQueryItem(name: "term", value: searchParameter)
-        components.queryItems = [queryParameter]
+        let artistName = URLQueryItem(name: "term", value: searchParameter)
+        let resultLimit = URLQueryItem(name: "limit", value: "200")
+        components.queryItems = [artistName, /*resultType,*/ resultLimit]
         
         return components.url
     }
     
+    // MARK: - Functions
     func searchArtistTracks(completion: @escaping (Result<[Track], NetworkError>) -> ()) {
         
         guard let url = url else { return }
-        
+        print(url)
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -55,10 +56,7 @@ final class NetworkManager {
             } catch {
                 completion(.failure(.unableToDecode))
             }
-            
         }.resume()
-        
-    }
-    
+    } // End of searchArtistTracks function
     
 } // End of class

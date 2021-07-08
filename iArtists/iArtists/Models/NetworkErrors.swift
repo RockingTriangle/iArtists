@@ -9,12 +9,14 @@ import Foundation
 
 enum NetworkError: Error, LocalizedError {
     
+    // Cases
     case invalidURL
     case thrownError(Error)
     case non200Response(HTTPURLResponse)
     case noData
     case unableToDecode
     
+    // Error Descriptions for debugging
     var errorDescription: String? {
         switch self {
         case .invalidURL:
@@ -30,4 +32,4 @@ enum NetworkError: Error, LocalizedError {
         }
     }
     
-}
+} // End of enum
