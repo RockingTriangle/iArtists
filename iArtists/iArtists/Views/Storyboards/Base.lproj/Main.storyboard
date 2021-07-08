@@ -19,8 +19,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93g-3f-bKZ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="50"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Enter artist's name..." translatesAutoresizingMaskIntoConstraints="NO" id="28J-Fu-Rem">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Enter artist's name..." translatesAutoresizingMaskIntoConstraints="NO" id="28J-Fu-Rem">
                                         <rect key="frame" x="12" y="4" width="390" height="42"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                                         <connections>
                                             <outlet property="delegate" destination="iVN-pI-xtu" id="aii-mP-aSj"/>
@@ -59,7 +60,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CKk-7b-gxW">
                                                     <rect key="frame" x="28" y="16" width="358" height="130"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;artist name&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2ab-Sr-tLw">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;artist name&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2ab-Sr-tLw">
                                                             <rect key="frame" x="0.0" y="0.0" width="358" height="34"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>

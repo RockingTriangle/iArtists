@@ -22,6 +22,8 @@ class ArtistSearchViewController: UIViewController {
         super.viewDidLoad()
         modelController.delegate = self
         searchBar.searchTextField.backgroundColor = .white
+        searchBar.searchTextField.textColor = .black
+        searchBar.searchTextField.leftView?.tintColor = .black
     }
     
     // MARK: - IBActions
