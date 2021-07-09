@@ -7,6 +7,11 @@
 
 import UIKit
 
+// MARK: - Protocol
+protocol ShowAudioPreviewViewController: AnyObject {
+    func previewTrack(urlString: String)
+}
+
 class ArtistTrackTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
@@ -19,7 +24,7 @@ class ArtistTrackTableViewCell: UITableViewCell {
     @IBOutlet weak var trackPreviewButton: UIButton!
     
     // MARK: - Properties
-    var isPlaying: Bool = false
+    weak var delegate: ShowAudioPreviewViewController?
     var track: Track? {
         didSet {
             loadTrackCover(with: track?.displayTrackCover ?? "itunesSearch")
@@ -28,8 +33,8 @@ class ArtistTrackTableViewCell: UITableViewCell {
     
     // MARK: - IBActions
     @IBAction func trackPreviewButtonTapped(_ sender: UIButton) {
-        guard let track = track else { return }
-        
+        guard let delegate = delegate, let track = track else { return }
+        delegate.previewTrack(urlString: track.displayTrackPreview)
     }
     
     // MARK: - Functions

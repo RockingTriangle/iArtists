@@ -16,6 +16,7 @@ class ArtistSearchViewController: UIViewController {
     // MARK: - Properties
     var modelController = ArtistSearchModelController()
     let spinner = SpinnerViewController()
+    var urlString: String?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -43,6 +44,11 @@ class ArtistSearchViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? AudioPlayerViewController, let urlString = urlString else { return }
+        destinationVC.urlString = urlString
+    }
+    
 } // End of class
 
 // MARK: - Extensions
@@ -56,6 +62,7 @@ extension ArtistSearchViewController: UITableViewDelegate, UITableViewDataSource
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "trackCell", for: indexPath)
                 as? ArtistTrackTableViewCell else { return UITableViewCell() }
         cell.trackImageView.image = nil
+        cell.delegate = self
         cell.track = modelController.artistTracks[indexPath.row]
         return cell
     }
@@ -96,3 +103,12 @@ extension ArtistSearchViewController: ReloadTableViewProtocol {
     }
     
 } // End of ReloadTableViewProtocol functions
+
+extension ArtistSearchViewController: ShowAudioPreviewViewController {
+    
+    func previewTrack(urlString: String) {
+        self.urlString = urlString
+        self.performSegue(withIdentifier: "showPlayer", sender: self)
+    }
+    
+}
