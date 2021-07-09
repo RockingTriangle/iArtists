@@ -15,16 +15,12 @@ class ArtistSearchViewController: UIViewController {
     
     // MARK: - Properties
     var modelController = ArtistSearchModelController()
-    let spinner = SpinnerViewController()
     var urlString: String?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        modelController.delegate = self
-        searchBar.searchTextField.backgroundColor = .white
-        searchBar.searchTextField.textColor = .black
-        searchBar.searchTextField.leftView?.tintColor = .black
+        configureViews()
     }
     
     // MARK: - IBActions
@@ -39,9 +35,57 @@ class ArtistSearchViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func sortButtonTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "Sorting Options: Track Names", message: nil, preferredStyle: .actionSheet)
+        let aToZAction = UIAlertAction(title: "A -> Z", style: .default) { _ in
+            if self.modelController.sortingMethod == .aToZ { return }
+            self.modelController.sortingMethod = .aToZ
+            self.modelController.artistTracks = self.modelController.artistTracks
+            self.reloadTableView()
+        }
+        let zToAAction = UIAlertAction(title: "Z -> A", style: .default) { _ in
+            if self.modelController.sortingMethod == .zToA { return }
+            self.modelController.sortingMethod = .zToA
+            self.modelController.artistTracks = self.modelController.artistTracks
+            self.reloadTableView()
+        }
+        let newToOldAction = UIAlertAction(title: "Newest first", style: .default) { _ in
+            if self.modelController.sortingMethod == .newestFirst { return }
+            self.modelController.sortingMethod = .newestFirst
+            self.modelController.artistTracks = self.modelController.artistTracks
+            self.reloadTableView()
+        }
+        let oldToNewAction = UIAlertAction(title: "Oldest first", style: .default) { _ in
+            if self.modelController.sortingMethod == .oldestFirst { return }
+            self.modelController.sortingMethod = .oldestFirst
+            self.modelController.artistTracks = self.modelController.artistTracks
+            self.reloadTableView()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(aToZAction)
+        alert.addAction(zToAAction)
+        alert.addAction(newToOldAction)
+        alert.addAction(oldToNewAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true)
+    }
+    
     // MARK: - Functions
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+    func configureViews() {
+        modelController.delegate = self
+        
+        searchBar.searchTextField.backgroundColor     = .white
+        searchBar.searchTextField.textColor           = .black
+        searchBar.searchTextField.leftView?.tintColor = .black
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(gesture:)))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard(gesture: UITapGestureRecognizer) {
+        searchBar.resignFirstResponder()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,6 +112,7 @@ extension ArtistSearchViewController: UITableViewDelegate, UITableViewDataSource
     }
     
 } // End of UITableViewDelegate/DataSource functions
+
 extension ArtistSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -81,6 +126,7 @@ extension ArtistSearchViewController: UISearchBarDelegate {
     }
     
 } // End of UISearchBarDelegate functions
+
 extension ArtistSearchViewController: ReloadTableViewProtocol {
     
     func reloadTableView() {

@@ -40,6 +40,8 @@ class ArtistTrackTableViewCell: UITableViewCell {
     // MARK: - Functions
     private func updateView() {
         guard let track = track else { return }
+        trackImageView.layer.borderWidth = 2
+        trackImageView.layer.borderColor = CGColor(gray: 0.5, alpha: 1)
         artistNameLabel.text  = track.displayArtistName
         trackNameLabel.text   = track.displayTrackName
         genreNameLabel.text   = track.displayPrimaryGenreName

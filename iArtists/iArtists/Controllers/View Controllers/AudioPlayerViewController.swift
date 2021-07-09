@@ -34,6 +34,8 @@ class AudioPlayerViewController: UIViewController, WKNavigationDelegate {
         webViewPlayer.alpha = 0
         dismissButton.alpha = 0
         
+        self.view.showBlurLoader()
+        
         webViewPlayer.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
     }
     
@@ -44,9 +46,11 @@ class AudioPlayerViewController: UIViewController, WKNavigationDelegate {
         self.webViewPlayer.load(URLRequest(url: url))
     }
     
+    // MARK: - Overrides
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "loading" {
             if !webViewPlayer.isLoading {
+                self.view.removeBlurLoader()
                 DispatchQueue.main.async {
                     UIView.animate(withDuration: 1.0) {
                         self.webViewPlayer.alpha = 1
@@ -55,6 +59,10 @@ class AudioPlayerViewController: UIViewController, WKNavigationDelegate {
                 }
             }
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
         
 } // End of class

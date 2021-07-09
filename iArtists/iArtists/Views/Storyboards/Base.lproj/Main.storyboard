@@ -81,12 +81,12 @@
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="255" horizontalCompressionResistancePriority="755" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKV-lV-48v" userLabel="trackPreviewButton">
                                                                     <rect key="frame" x="312" y="0.5" width="30" height="29"/>
-                                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                                    <color key="backgroundColor" systemColor="labelColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="Ih6-6J-gpO"/>
                                                                         <constraint firstAttribute="width" constant="30" id="Xak-Kg-6uf"/>
                                                                     </constraints>
-                                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                                                     <state key="normal" backgroundImage="play.circle" catalog="system"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -247,18 +247,23 @@
                                 <action selector="clearButtonTapped:" destination="iVN-pI-xtu" id="4tM-LB-TfB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Search Artist" id="vRb-IN-Aq4">
-                            <connections>
-                                <action selector="searchArtistButtonTapped:" destination="iVN-pI-xtu" id="XD4-a1-bB7"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="search" id="vRb-IN-Aq4">
+                                <connections>
+                                    <action selector="searchArtistButtonTapped:" destination="iVN-pI-xtu" id="XD4-a1-bB7"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="arrow.up.arrow.down" catalog="system" id="EDk-Ub-YLs">
+                                <connections>
+                                    <action selector="sortButtonTapped:" destination="iVN-pI-xtu" id="eQ2-UV-J1F"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="28J-Fu-Rem" id="NEr-Iw-1lx"/>
                         <outlet property="tableView" destination="STg-ck-4Wl" id="YGy-AB-rbu"/>
-                        <segue destination="PDD-IB-12C" kind="popoverPresentation" identifier="showPlayer" popoverAnchorView="STg-ck-4Wl" id="xj9-Oh-j2d">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="PDD-IB-12C" kind="presentation" identifier="showPlayer" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="xj9-Oh-j2d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukp-A3-Syj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -268,13 +273,13 @@
         <!--Audio Player View Controller-->
         <scene sceneID="YuS-pg-15Q">
             <objects>
-                <viewController storyboardIdentifier="playerVC" modalTransitionStyle="crossDissolve" id="PDD-IB-12C" customClass="AudioPlayerViewController" customModule="iArtists" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playerVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="PDD-IB-12C" customClass="AudioPlayerViewController" customModule="iArtists" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bTe-fM-Xgl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VO6-Af-K4P">
-                                <rect key="frame" x="72.5" y="341" width="269" height="126"/>
+                                <rect key="frame" x="72.5" y="386" width="269" height="134"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -287,13 +292,13 @@
                                 </userDefinedRuntimeAttributes>
                             </wkWebView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtD-kz-WZC">
-                                <rect key="frame" x="301.5" y="357.5" width="24" height="23"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="301.5" y="402.5" width="24" height="23"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="VT6-yB-UEc"/>
                                     <constraint firstAttribute="height" constant="24" id="lxD-gg-ICF"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <state key="normal">
                                     <imageReference key="backgroundImage" image="x.circle.fill" catalog="system" symbolScale="default"/>
                                 </state>
@@ -351,6 +356,7 @@
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
+        <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>
         <image name="x.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
@@ -362,8 +368,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

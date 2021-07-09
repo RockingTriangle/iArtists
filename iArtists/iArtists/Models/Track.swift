@@ -47,7 +47,9 @@ struct Track: Codable {
             return "$\(trackPrice)"
         } else { return "N/A" }
     }
-    
+    /// Helper property for sorting data.
+    var sortingDate             : String { releaseDate                  ?? "N?A" }
+
     /// Helper function to convert API string to desired display format.
     func convertDateToDisplayString() -> String? {
         if let releaseDate = releaseDate {

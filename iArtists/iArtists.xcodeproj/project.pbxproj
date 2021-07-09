@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1344563226989BC9001A666C /* SortingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344563126989BC9001A666C /* SortingMethod.swift */; };
 		13475C592696199A0026ACD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C582696199A0026ACD1 /* AppDelegate.swift */; };
 		13475C5B2696199A0026ACD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C5A2696199A0026ACD1 /* SceneDelegate.swift */; };
 		13475C602696199A0026ACD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13475C5E2696199A0026ACD1 /* Main.storyboard */; };
@@ -20,7 +21,6 @@
 		13475C9826963BBB0026ACD1 /* ArtistTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9726963BBB0026ACD1 /* ArtistTrackTableViewCell.swift */; };
 		13475C9A26963D0A0026ACD1 /* ArtistSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9926963D0A0026ACD1 /* ArtistSearchViewController.swift */; };
 		13475C9C269640050026ACD1 /* ArtistSearchModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9B269640050026ACD1 /* ArtistSearchModelController.swift */; };
-		13475C9E269661B70026ACD1 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9D269661B70026ACD1 /* SpinnerViewController.swift */; };
 		13475CA0269667CA0026ACD1 /* BlurLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9F269667CA0026ACD1 /* BlurLoader.swift */; };
 		13972D382697B4CB00446DCD /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13972D372697B4CB00446DCD /* AudioPlayerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1344563126989BC9001A666C /* SortingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingMethod.swift; sourceTree = "<group>"; };
 		13475C552696199A0026ACD1 /* iArtists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iArtists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13475C582696199A0026ACD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13475C5A2696199A0026ACD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		13475C9726963BBB0026ACD1 /* ArtistTrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTrackTableViewCell.swift; sourceTree = "<group>"; };
 		13475C9926963D0A0026ACD1 /* ArtistSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewController.swift; sourceTree = "<group>"; };
 		13475C9B269640050026ACD1 /* ArtistSearchModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchModelController.swift; sourceTree = "<group>"; };
-		13475C9D269661B70026ACD1 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		13475C9F269667CA0026ACD1 /* BlurLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurLoader.swift; sourceTree = "<group>"; };
 		13972D372697B4CB00446DCD /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +176,7 @@
 			children = (
 				13475C8D269622710026ACD1 /* Track.swift */,
 				13475C9526962A650026ACD1 /* NetworkErrors.swift */,
+				1344563126989BC9001A666C /* SortingMethod.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				13475C9926963D0A0026ACD1 /* ArtistSearchViewController.swift */,
-				13475C9D269661B70026ACD1 /* SpinnerViewController.swift */,
 				13972D372697B4CB00446DCD /* AudioPlayerViewController.swift */,
 			);
 			path = "View Controllers";
@@ -359,11 +359,11 @@
 				13475C9C269640050026ACD1 /* ArtistSearchModelController.swift in Sources */,
 				13475CA0269667CA0026ACD1 /* BlurLoader.swift in Sources */,
 				13475C9A26963D0A0026ACD1 /* ArtistSearchViewController.swift in Sources */,
+				1344563226989BC9001A666C /* SortingMethod.swift in Sources */,
 				13475C8E269622710026ACD1 /* Track.swift in Sources */,
 				13475C9626962A650026ACD1 /* NetworkErrors.swift in Sources */,
 				13972D382697B4CB00446DCD /* AudioPlayerViewController.swift in Sources */,
 				13475C592696199A0026ACD1 /* AppDelegate.swift in Sources */,
-				13475C9E269661B70026ACD1 /* SpinnerViewController.swift in Sources */,
 				13475C5B2696199A0026ACD1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

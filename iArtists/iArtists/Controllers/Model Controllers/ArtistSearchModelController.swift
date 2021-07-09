@@ -17,9 +17,20 @@ class ArtistSearchModelController {
     // MARK: - Properties
     var delegate: ReloadTableViewProtocol?
     var artistName: String = ""
+    var sortingMethod: SortingMethod = .newestFirst
     var artistTracks: [Track] = [] {
         didSet {
             artistTracks.removeAll { !$0.displayArtistName.lowercased().contains(artistName.lowercased()) }
+            switch sortingMethod {
+            case .aToZ:
+                artistTracks.sort { $0.displayTrackName < $1.displayTrackName }
+            case .zToA:
+                artistTracks.sort { $0.displayTrackName > $1.displayTrackName }
+            case .newestFirst:
+                artistTracks.sort { $0.sortingDate > $1.sortingDate }
+            case .oldestFirst:
+                artistTracks.sort { $0.sortingDate < $1.sortingDate }
+            }
         }
     }
     
