@@ -79,6 +79,7 @@ class ArtistSearchViewController: UIViewController {
         searchBar.searchTextField.backgroundColor     = .white
         searchBar.searchTextField.textColor           = .black
         searchBar.searchTextField.leftView?.tintColor = .black
+        searchBar.becomeFirstResponder()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(gesture:)))
         view.addGestureRecognizer(tapGesture)
@@ -107,6 +108,7 @@ extension ArtistSearchViewController: UITableViewDelegate, UITableViewDataSource
                 as? ArtistTrackTableViewCell else { return UITableViewCell() }
         cell.trackImageView.image = nil
         cell.delegate = self
+        cell.networkManager = modelController.networkManager
         cell.track = modelController.artistTracks[indexPath.row]
         return cell
     }

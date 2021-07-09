@@ -9,14 +9,8 @@ import UIKit
 
 final class NetworkManager {
     
-    // Shared instance of NetworkManager class
-    static let shared = NetworkManager()
-    
-    private init() {}
-    
-    private let cache = NSCache<NSString, UIImage>()
-    
     // MARK: - Properties
+    private let cache = NSCache<NSString, UIImage>()
     var searchParameter: String?
     var url: URL? {
         let baseURL = "https://itunes.apple.com/search"

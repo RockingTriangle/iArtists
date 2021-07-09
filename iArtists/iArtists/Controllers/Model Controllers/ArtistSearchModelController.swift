@@ -15,6 +15,7 @@ protocol ReloadTableViewProtocol {
 class ArtistSearchModelController {
     
     // MARK: - Properties
+    let networkManager = NetworkManager()
     var delegate: ReloadTableViewProtocol?
     var artistName: String = ""
     var sortingMethod: SortingMethod = .newestFirst
@@ -36,8 +37,8 @@ class ArtistSearchModelController {
     
     // MARK: - Functions
     func getArtistTracks() {
-        NetworkManager.shared.searchParameter = artistName
-        NetworkManager.shared.searchArtistTracks { [weak self] result in
+        networkManager.searchParameter = artistName
+        networkManager.searchArtistTracks { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let tracks):

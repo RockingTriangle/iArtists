@@ -29,7 +29,7 @@
                                         </connections>
                                     </searchBar>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7Tf-nc-3bM"/>
                                     <constraint firstItem="28J-Fu-Rem" firstAttribute="leading" secondItem="93g-3f-bKZ" secondAttribute="leading" constant="12" id="HJE-pj-6lg"/>
@@ -40,7 +40,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="STg-ck-4Wl">
                                 <rect key="frame" x="0.0" y="138" width="414" height="758"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="trackCell" id="084-y8-HcH" customClass="ArtistTrackTableViewCell" customModule="iArtists" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="287.5"/>
@@ -55,6 +55,9 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                             <integer key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <real key="value" value="0.5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -129,6 +132,9 @@
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                             <integer key="value" value="12"/>
                                                                         </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                            <integer key="value" value="1"/>
+                                                                        </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sg1-6S-t9f">
@@ -199,7 +205,7 @@
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="8j2-Xw-ppV" firstAttribute="top" secondItem="jX5-RJ-PeY" secondAttribute="top" constant="8" id="0fd-ed-3C5"/>
                                                 <constraint firstItem="8j2-Xw-ppV" firstAttribute="leading" secondItem="jX5-RJ-PeY" secondAttribute="leading" constant="20" id="1i4-BZ-2c4"/>
@@ -212,8 +218,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="8j2-Xw-ppV" secondAttribute="bottom" constant="8" id="xTA-7F-ADE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
                                             <outlet property="artistNameLabel" destination="2ab-Sr-tLw" id="eBT-Ys-bsH"/>
+                                            <outlet property="cellView" destination="8j2-Xw-ppV" id="gMe-h8-t0b"/>
                                             <outlet property="genreNameLabel" destination="FsP-1y-r4B" id="pXg-8n-2ef"/>
                                             <outlet property="releaseDateLabel" destination="wtr-6z-RoT" id="gHH-Xx-UBo"/>
                                             <outlet property="trackImageView" destination="9T3-7H-C96" id="fkL-9Y-Zfo"/>
