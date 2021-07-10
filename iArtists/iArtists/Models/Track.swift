@@ -22,9 +22,9 @@ struct Track: Codable {
     private let trackName           : String?
     private let releaseDate         : String?
     private let primaryGenreName    : String?
-    private let trackPrice          : Double?
     private let trackCover          : String?
     private let trackPreview        : String?
+    private let trackPrice          : Double?
     
     enum CodingKeys: String, CodingKey {
         case artistName, trackName, releaseDate, primaryGenreName, trackPrice
@@ -32,11 +32,11 @@ struct Track: Codable {
         case trackPreview = "previewUrl"
     }
     
-    /// Properties for use in App to prevent API from providing nil values resulting in crash.
+    /// Properties for use in App to prevent API from providing nil values that would result in a crash.
     var displayArtistName       : String { artistName                   ?? "Not Available" }
     var displayTrackName        : String { trackName                    ?? "Not Available" }
+    var displayReleaseDate      : String { convertDateToDisplayString() }
     var displayPrimaryGenreName : String { primaryGenreName             ?? "N/A" }
-    var displayReleaseDate      : String { convertDateToDisplayString() ?? "N/A" }
     var displayTrackCover       : String { trackCover                   ?? "itunesSearch" }
     var displayTrackPreview     : String { trackPreview                 ?? "" }
     var displayTrackPrice       : String {
@@ -45,13 +45,14 @@ struct Track: Codable {
                 return "N/A"
             }
             return "$\(trackPrice)"
-        } else { return "N/A" }
+        }
+        return "N/A"
     }
     /// Helper property for sorting data.
-    var sortingDate             : String { releaseDate                  ?? "N?A" }
+    var sortingDate             : String { releaseDate                  ?? "N/A" }
 
     /// Helper function to convert API string to desired display format.
-    func convertDateToDisplayString() -> String? {
+    func convertDateToDisplayString() -> String {
         if let releaseDate = releaseDate {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"

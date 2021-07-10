@@ -8,25 +8,25 @@
 import UIKit
 
 // MARK: - Protocol
-protocol ShowAudioPreviewViewController: AnyObject {
+protocol ShowAudioPreviewViewControllerProtocol: AnyObject {
     func previewTrack(urlString: String)
 }
 
 class ArtistTrackTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var trackNameLabel: UILabel!
-    @IBOutlet weak var genreNameLabel: UILabel!
-    @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var trackPriceLabel: UILabel!
-    @IBOutlet weak var trackImageView: UIImageView!
-    @IBOutlet weak var trackPreviewButton: UIButton!
-    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var artistNameLabel      : UILabel!
+    @IBOutlet weak var trackNameLabel       : UILabel!
+    @IBOutlet weak var genreNameLabel       : UILabel!
+    @IBOutlet weak var releaseDateLabel     : UILabel!
+    @IBOutlet weak var trackPriceLabel      : UILabel!
+    @IBOutlet weak var trackImageView       : UIImageView!
+    @IBOutlet weak var trackPreviewButton   : UIButton!
+    @IBOutlet weak var cellView             : UIView!
     
     // MARK: - Properties
-    var networkManager: NetworkManager?
-    weak var delegate: ShowAudioPreviewViewController?
+    var networkManager  : NetworkManager?
+    weak var delegate   : ShowAudioPreviewViewControllerProtocol?
     var track: Track? {
         didSet {
             loadTrackCover(with: track?.displayTrackCover ?? "itunesSearch")

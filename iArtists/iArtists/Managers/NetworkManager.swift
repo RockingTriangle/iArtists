@@ -20,7 +20,7 @@ final class NetworkManager {
         
         let artistName = URLQueryItem(name: "term", value: searchParameter)
         let resultLimit = URLQueryItem(name: "limit", value: "200")
-        components.queryItems = [artistName, /*resultType,*/ resultLimit]
+        components.queryItems = [artistName, resultLimit]
         
         return components.url
     }

@@ -15,11 +15,11 @@ protocol ReloadTableViewProtocol {
 class ArtistSearchModelController {
     
     // MARK: - Properties
-    let networkManager = NetworkManager()
-    var delegate: ReloadTableViewProtocol?
-    var artistName: String = ""
-    var sortingMethod: SortingMethod = .newestFirst
-    var artistTracks: [Track] = [] {
+    let networkManager      = NetworkManager()
+    var delegate            : ReloadTableViewProtocol?
+    var artistName          : String = ""
+    var sortingMethod       : SortingMethod = .newestFirst
+    var artistTracks        : [Track] = [] {
         didSet {
             artistTracks.removeAll { !$0.displayArtistName.lowercased().contains(artistName.lowercased()) }
             switch sortingMethod {
