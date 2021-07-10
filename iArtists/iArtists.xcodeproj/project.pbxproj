@@ -13,8 +13,6 @@
 		13475C602696199A0026ACD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13475C5E2696199A0026ACD1 /* Main.storyboard */; };
 		13475C622696199B0026ACD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13475C612696199B0026ACD1 /* Assets.xcassets */; };
 		13475C652696199B0026ACD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13475C632696199B0026ACD1 /* LaunchScreen.storyboard */; };
-		13475C702696199B0026ACD1 /* iArtistsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C6F2696199B0026ACD1 /* iArtistsTests.swift */; };
-		13475C7B2696199B0026ACD1 /* iArtistsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C7A2696199B0026ACD1 /* iArtistsUITests.swift */; };
 		13475C8E269622710026ACD1 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C8D269622710026ACD1 /* Track.swift */; };
 		13475C9426962A530026ACD1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9326962A530026ACD1 /* NetworkManager.swift */; };
 		13475C9626962A650026ACD1 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9526962A650026ACD1 /* NetworkErrors.swift */; };
@@ -22,7 +20,9 @@
 		13475C9A26963D0A0026ACD1 /* ArtistSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9926963D0A0026ACD1 /* ArtistSearchViewController.swift */; };
 		13475C9C269640050026ACD1 /* ArtistSearchModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9B269640050026ACD1 /* ArtistSearchModelController.swift */; };
 		13475CA0269667CA0026ACD1 /* BlurLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13475C9F269667CA0026ACD1 /* BlurLoader.swift */; };
+		1373150226994F9100C53D03 /* NetworkErrorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1373150126994F9100C53D03 /* NetworkErrorsTests.swift */; };
 		13972D382697B4CB00446DCD /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13972D372697B4CB00446DCD /* AudioPlayerViewController.swift */; };
+		13DFA693269934C40069F010 /* TrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFA692269934C40069F010 /* TrackTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,11 +52,8 @@
 		13475C642696199B0026ACD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13475C662696199B0026ACD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13475C6B2696199B0026ACD1 /* iArtistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iArtistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		13475C6F2696199B0026ACD1 /* iArtistsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iArtistsTests.swift; sourceTree = "<group>"; };
 		13475C712696199B0026ACD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13475C762696199B0026ACD1 /* iArtistsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iArtistsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		13475C7A2696199B0026ACD1 /* iArtistsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iArtistsUITests.swift; sourceTree = "<group>"; };
-		13475C7C2696199B0026ACD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13475C8D269622710026ACD1 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		13475C9326962A530026ACD1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		13475C9526962A650026ACD1 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
@@ -64,7 +61,9 @@
 		13475C9926963D0A0026ACD1 /* ArtistSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchViewController.swift; sourceTree = "<group>"; };
 		13475C9B269640050026ACD1 /* ArtistSearchModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSearchModelController.swift; sourceTree = "<group>"; };
 		13475C9F269667CA0026ACD1 /* BlurLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurLoader.swift; sourceTree = "<group>"; };
+		1373150126994F9100C53D03 /* NetworkErrorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorsTests.swift; sourceTree = "<group>"; };
 		13972D372697B4CB00446DCD /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
+		13DFA692269934C40069F010 /* TrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +96,6 @@
 			children = (
 				13475C572696199A0026ACD1 /* iArtists */,
 				13475C6E2696199B0026ACD1 /* iArtistsTests */,
-				13475C792696199B0026ACD1 /* iArtistsUITests */,
 				13475C562696199A0026ACD1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,19 +125,11 @@
 		13475C6E2696199B0026ACD1 /* iArtistsTests */ = {
 			isa = PBXGroup;
 			children = (
-				13475C6F2696199B0026ACD1 /* iArtistsTests.swift */,
+				13DFA692269934C40069F010 /* TrackTests.swift */,
+				1373150126994F9100C53D03 /* NetworkErrorsTests.swift */,
 				13475C712696199B0026ACD1 /* Info.plist */,
 			);
 			path = iArtistsTests;
-			sourceTree = "<group>";
-		};
-		13475C792696199B0026ACD1 /* iArtistsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				13475C7A2696199B0026ACD1 /* iArtistsUITests.swift */,
-				13475C7C2696199B0026ACD1 /* Info.plist */,
-			);
-			path = iArtistsUITests;
 			sourceTree = "<group>";
 		};
 		13475C8826961BE40026ACD1 /* Views */ = {
@@ -372,7 +362,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13475C702696199B0026ACD1 /* iArtistsTests.swift in Sources */,
+				13DFA693269934C40069F010 /* TrackTests.swift in Sources */,
+				1373150226994F9100C53D03 /* NetworkErrorsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13475C7B2696199B0026ACD1 /* iArtistsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

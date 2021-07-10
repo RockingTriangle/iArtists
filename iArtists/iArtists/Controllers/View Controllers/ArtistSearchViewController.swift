@@ -15,7 +15,7 @@ class ArtistSearchViewController: UIViewController {
     
     // MARK: - Properties
     var modelController = ArtistSearchModelController()
-    var urlString: String?
+    var urlString       : String?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -32,7 +32,9 @@ class ArtistSearchViewController: UIViewController {
         modelController.artistTracks = []
         searchBar.text = ""
         searchBar.becomeFirstResponder()
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func sortButtonTapped(_ sender: Any) {
@@ -40,25 +42,25 @@ class ArtistSearchViewController: UIViewController {
         let aToZAction = UIAlertAction(title: "A -> Z", style: .default) { _ in
             if self.modelController.sortingMethod == .aToZ { return }
             self.modelController.sortingMethod = .aToZ
-            self.modelController.artistTracks = self.modelController.artistTracks
+            self.modelController.artistTracks  = self.modelController.artistTracks
             self.reloadTableView()
         }
         let zToAAction = UIAlertAction(title: "Z -> A", style: .default) { _ in
             if self.modelController.sortingMethod == .zToA { return }
             self.modelController.sortingMethod = .zToA
-            self.modelController.artistTracks = self.modelController.artistTracks
+            self.modelController.artistTracks  = self.modelController.artistTracks
             self.reloadTableView()
         }
         let newToOldAction = UIAlertAction(title: "Newest first", style: .default) { _ in
             if self.modelController.sortingMethod == .newestFirst { return }
             self.modelController.sortingMethod = .newestFirst
-            self.modelController.artistTracks = self.modelController.artistTracks
+            self.modelController.artistTracks  = self.modelController.artistTracks
             self.reloadTableView()
         }
         let oldToNewAction = UIAlertAction(title: "Oldest first", style: .default) { _ in
             if self.modelController.sortingMethod == .oldestFirst { return }
             self.modelController.sortingMethod = .oldestFirst
-            self.modelController.artistTracks = self.modelController.artistTracks
+            self.modelController.artistTracks  = self.modelController.artistTracks
             self.reloadTableView()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
@@ -97,6 +99,7 @@ class ArtistSearchViewController: UIViewController {
 } // End of class
 
 // MARK: - Extensions
+/// TableView Delegate and DataSource functions
 extension ArtistSearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -115,6 +118,7 @@ extension ArtistSearchViewController: UITableViewDelegate, UITableViewDataSource
     
 } // End of UITableViewDelegate/DataSource functions
 
+/// UISearchBar Delegate functions
 extension ArtistSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -129,6 +133,7 @@ extension ArtistSearchViewController: UISearchBarDelegate {
     
 } // End of UISearchBarDelegate functions
 
+/// ReloadTableViewProtocol function used for reloading the table view after a change to sorting option or after fetching tracks from the API
 extension ArtistSearchViewController: ReloadTableViewProtocol {
     
     func reloadTableView() {
@@ -152,11 +157,12 @@ extension ArtistSearchViewController: ReloadTableViewProtocol {
     
 } // End of ReloadTableViewProtocol functions
 
-extension ArtistSearchViewController: ShowAudioPreviewViewController {
+/// ShowAudioPreviewViewControllerProtocol for passing track preview url from cell to AudioPlayerViewController when the play button is tapped to preview a track
+extension ArtistSearchViewController: ShowAudioPreviewViewControllerProtocol {
     
     func previewTrack(urlString: String) {
         self.urlString = urlString
         self.performSegue(withIdentifier: "showPlayer", sender: self)
     }
     
-}
+} // End of ShowAudioPreviewViewControllerProtocol functions

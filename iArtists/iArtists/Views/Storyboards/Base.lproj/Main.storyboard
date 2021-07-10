@@ -23,7 +23,7 @@
                                     <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Enter artist's name..." translatesAutoresizingMaskIntoConstraints="NO" id="28J-Fu-Rem">
                                         <rect key="frame" x="12" y="4" width="390" height="42"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="iVN-pI-xtu" id="aii-mP-aSj"/>
                                         </connections>
@@ -250,15 +250,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="iArtist" id="9oj-Zm-1jx">
-                        <barButtonItem key="leftBarButtonItem" title="Clear" id="Acj-Gs-HMO">
-                            <connections>
-                                <action selector="clearButtonTapped:" destination="iVN-pI-xtu" id="4tM-LB-TfB"/>
-                            </connections>
-                        </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="search" id="vRb-IN-Aq4">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Clear" id="Acj-Gs-HMO">
                                 <connections>
-                                    <action selector="searchArtistButtonTapped:" destination="iVN-pI-xtu" id="XD4-a1-bB7"/>
+                                    <action selector="clearButtonTapped:" destination="iVN-pI-xtu" id="4tM-LB-TfB"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="arrow.up.arrow.down" catalog="system" id="EDk-Ub-YLs">
@@ -266,7 +261,12 @@
                                     <action selector="sortButtonTapped:" destination="iVN-pI-xtu" id="eQ2-UV-J1F"/>
                                 </connections>
                             </barButtonItem>
-                        </rightBarButtonItems>
+                        </leftBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Search Artist" id="vRb-IN-Aq4">
+                            <connections>
+                                <action selector="searchArtistButtonTapped:" destination="iVN-pI-xtu" id="XD4-a1-bB7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="28J-Fu-Rem" id="NEr-Iw-1lx"/>
